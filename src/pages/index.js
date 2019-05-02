@@ -1,21 +1,47 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Global, css } from "@emotion/core"
 
-import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import tokens from "../utils/tokens"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <>
+    <Global
+      styles={css`
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          background-color: ${tokens.colors.primary};
+          font-family: ${tokens.fonts.body};
+          color: ${tokens.colors.text};
+        }
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+          margin: 0;
+          padding: 0;
+        }
+      `}
+    />
+    <SEO title="Holding Page" />
+    <Image />
+    <h1
+      css={{
+        fontFamily: tokens.fonts.body,
+      }}
+    >
+      Our new website is currently being built
+    </h1>
+    <p>
+      We're a family run marquee hire business based near Llangollen, providing
+      marquees, furniture and equipment for all outdoor events across North
+      Wales, Mid Wales and Shropshire
+    </p>
+  </>
 )
 
 export default IndexPage

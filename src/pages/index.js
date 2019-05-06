@@ -13,7 +13,7 @@ import { space, fontSizes, mediaQueries, colours } from "../utils/tokens"
 const IndexPage = () => (
   <>
     <GlobalStyles />
-    <SEO title="Holding Page" />
+    <SEO />
     <LogotypeMobile />
     <LogotypeDesktop />
     <div
